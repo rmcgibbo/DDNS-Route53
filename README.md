@@ -40,6 +40,25 @@ LOG=D:\logdir\logfilename.log
 Copy ```config.example.ini``` to ```config.ini``` and edit for your enviroment.
 Run `python3 update.py` command on shell or cmd.
 
+Example IAM
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "1",
+            "Effect": "Allow",
+            "Action": [
+                "route53:ChangeResourceRecordSets",
+                "route53:ListResourceRecordSets"
+            ],
+            "Resource": "arn:aws:route53:::hostedzone/YOURHOSTEDZONEID"
+        }
+    ]
+}
+```
+
+
 ## Architecture
 ![Architecture Diagram](diagram/Architecture_Diagram.png)
 
