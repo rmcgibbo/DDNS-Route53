@@ -20,6 +20,12 @@ in
         description = "AWS hosted zone ID for Route53";
         example = "ABCD123";
       };
+      
+      check-url = mkOption {
+        type = types.str;
+        description = "";
+        example = "icanhazip.com";
+      };
 
       AWS_ACCESS_KEY_ID = mkOption {
         type = types.str;
@@ -50,7 +56,7 @@ in
         AWS_ACCESS_KEY_ID = cfg.AWS_ACCESS_KEY_ID;
         AWS_ACCESS_SECRET_KEY = cfg.AWS_ACCESS_SECRET_KEY;
         GET_IP = "AWS";
-        CHECK_URL = "http://bot.whatismyipaddress.com";
+        CHECK_URL = cfg.check-url;
         LOG = "CONSOLE";
       };
       serviceConfig = {
