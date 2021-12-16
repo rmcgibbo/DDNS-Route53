@@ -19,8 +19,8 @@ class Config:
             else:
                 self.domain = os.environ['DOMAIN']
                 self.aws_hosted_zone_id = os.environ['AWS_HOSTED_ZONE_ID']
-                self.aws_access_key_id = os.environ['AWS_ACCESS_KEY_ID']
-                self.aws_secret_access_key = os.environ['AWS_ACCESS_SECRET_KEY']
+                self.aws_access_key_id = (os.environ.get('AWS_ACCESS_KEY_ID') or None)
+                self.aws_secret_access_key = (os.environ.get('AWS_ACCESS_SECRET_KEY') or None)
                 self.get_ip = os.environ['GET_IP']
                 self.check_url = os.environ['CHECK_URL']
                 self.log = os.environ['LOG']
